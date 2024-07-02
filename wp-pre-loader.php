@@ -23,14 +23,24 @@ class WpPreLoader {
     // Constructor to initialize the plugin
     public function __construct() {
         add_action('wp_enqueue_scripts', array($this, 'enqueue_scripts'));
+
     }
 
    // Enqueue pre-loader styles and scripts
     public function enqueue_scripts() {
         wp_enqueue_style('wp-pre-loader-style', plugin_dir_url(__FILE__) . 'assets/css/wp-pre-loader.css');
+        wp_enqueue_script('wp-pre-loader-script', plugin_dir_url(__FILE__) . 'js/wp-pre-loader.js', array('jquery'), null, true);
     }
 
 }
 
 // Initialize the plugin
 new WpPreLoader();
+
+
+
+
+    public function enqueue_scripts() {
+        wp_enqueue_style('wp-pre-loader-style', plugin_dir_url(__FILE__) . 'css/wp-pre-loader.css');
+        wp_enqueue_script('wp-pre-loader-script', plugin_dir_url(__FILE__) . 'js/wp-pre-loader.js', array('jquery'), null, true);
+    }
