@@ -17,3 +17,10 @@
  if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly
 }
+
+class WpPreLoader {
+
+}
+
+// Initialize the plugin
+new WpPreLoader();
